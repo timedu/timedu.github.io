@@ -23,3 +23,8 @@ markdown: kramdown
 
 # TiM
 footer_text: 2016 timEdu by TiM
+
+collections:
+  weo2016k:
+    output: true
+    permalink: /weo2016k/:path/
