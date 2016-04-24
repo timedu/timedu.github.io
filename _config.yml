@@ -22,4 +22,4 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 markdown: kramdown
 
 # TiM
-footer_text: timEdu by TiM
+footer_text: 2016 timEdu by TiM
