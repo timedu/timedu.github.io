@@ -30,4 +30,4 @@ collections:
     permalink: /weo2016k/:path/
   tkj2016k:
     output: true
-    permalink: /weo2016k/:path/
+    permalink: /tkj2016k/:path/
