@@ -28,3 +28,6 @@ collections:
   weo2016k:
     output: true
     permalink: /weo2016k/:path/
+  tkj2016k:
+    output: true
+    permalink: /weo2016k/:path/
