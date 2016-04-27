@@ -94,7 +94,33 @@ Edellinen hoituu myös yhdellä sijoituslauseella:
 ~~~
 $emp = $employee->getOData();
 ~~~
- 
+
+Edellä oli esimerkki, miten dokumentin `LINK`-tyyppisen ominaisuuden kautta voidaan viitata toisen dokumentin ominaisuukseen. Seuraavssa on sama esimerkki kuitenkin niin, että `Employee` ja `City` ovat graafitietokannan solmuja siten, että niiden välillä on `Lives`-kaari ("employee lives city"):
+
+~~~
+$id = '#2:34';
+$employee = $client->query(''
+      . ' SELECT   name, job, @rid AS id, OUT(Lives).name AS city_name'
+      . ' FROM     Employee'
+      . " WHERE    @rid = $id"
+)[0];
+
+~~~
+
+[OUT](http://orientdb.com/docs/last/SQL-Functions.html#out)
+-funktiolla löydetään `Employee`-solmuun `Lives`-kaaren kautta liittyvät `City`-solmut.  
+
+Edellä esitettyjen sijoituslauseiden jälkeen `$employee` sisältää `Record`-olion, jonka `city_name`-ominaisutena on taulukko. Jos tavoitteena on muodostaa `$employee`-muuttujan sisällöksi normalisoitu rakenne, niin sen voi tehdä tässä esim. seuraavasti:
+
+~~~
+if (count($employee->city_name)) {
+   $employee->city_name = $employee->city_name[0];
+}
+~~~
+
+Edellä taulukko siis korvataan taulukon ensimmäisellä alkiolla (oletetaan, että employee:llä on korkeintaan yksi city).
+
+
 
 ## Lisäys 
 
