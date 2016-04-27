@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Esimerkkejä: OrientDB/PHP
+title: Esimerkkejä
 ---
 
 Esimerkit perustuvat OrientDB 
