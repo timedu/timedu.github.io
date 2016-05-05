@@ -20,7 +20,7 @@ Käsikirjan ensimmäinen luku sisältää ohjeet tietokantaohjelmiston asentamis
 ([PhpOrient](https://github.com/orientechnologies/PhpOrient))
 on mukana tehtäväpohjassa. Ajuri kuitenkin edellyttää, että PHP:n socket-laajennus on aktivoitu[^1].
 
-[^1]: Esim. windows-ympäristössä tiedostossa `php.ini` rivin `;extension=php_sockets.dll` alusta postetaan kommentointimerkki (`;`).
+[^1]: Esim. windows-ympäristössä tiedostossa `php.ini` rivin `;extension=php_sockets.dll` alusta poistetaan kommentointimerkki (`;`).
 
 ## Tietokantapalvelimen käynnistys
 
