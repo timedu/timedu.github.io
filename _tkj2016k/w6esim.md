@@ -49,8 +49,6 @@ esim:
 
 {% highlight sql %}
 
-<?php
-
     SELECT name, job, @rid AS id
     FROM   Employee 
     WHERE  city.name = 'Rome'
@@ -152,9 +150,27 @@ Edellä esitettyjen sijoituslauseiden jälkeen `$employee` sisältää `Record`-
 
 {% endhighlight %}
 
-Edellä taulukko siis korvataan taulukon ensimmäisellä alkiolla (oletetaan, että employee:llä on korkeintaan yksi city).
+Taulukko siis korvataan taulukon ensimmäisellä alkiolla (oletetaan, että employee:llä on korkeintaan yksi city).
 
+Edellinen kysely hakee tietoja `Employee`-solmun kautta. Samat tiedot saadaan myös `Lives`-kaaren kautta:
 
+{% highlight php %}
+
+<?php
+
+    $id = '#2:34'; // employee rid
+    $employee = $client->query(''
+        . 'SELECT  out.name AS name, ' 
+        . '        out.job  AS job,  '
+        . '        out.@rid AS id,   '
+        . '        in.name  AS city_name  '
+        . 'FROM Lives '
+        . "WHERE out.@rid = $id"
+    );
+
+{% endhighlight %}
+
+Tämä kysely ei kuitenkaan palauta `Employee`-tietoja, jos `Employee`-solmuun ei liity `Lives`-kaarta.
 
 ## Lisäys 
 
