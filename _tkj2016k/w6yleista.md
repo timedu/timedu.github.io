@@ -18,7 +18,9 @@ sisältää 21 luentoa (yhteensä 2h) ja niihin perustuvia monivalintatehtäviä
 Käsikirjan ensimmäinen luku sisältää ohjeet tietokantaohjelmiston asentamiseen. Binääriasennukseen tarvittavan paketin eri käyttöjärjestelmille voi ladata 
 [Download -sivulta](http://orientdb.com/download/). Erillisiä ajureita ei tarvitse ladata/asentaa. Tehtävässä käytettävä ajuri
 ([PhpOrient](https://github.com/orientechnologies/PhpOrient))
-on mukana tehtäväpohjassa.
+on mukana tehtäväpohjassa. Ajuri kuitenkin edellyttää, että PHP:n socket-laajennus on aktivoitu[^1].
+
+[^1]: Esim. windows-ympäristössä tiedostossa `php.ini` rivin `;extension=php_sockets.dll` alusta postetaan kommentointimerkki (`;`).
 
 ## Tietokantapalvelimen käynnistys
 
@@ -30,5 +32,7 @@ ja toinen selaimen kautta käytettävä web-sovellus
 
 ## Tietokannan perustaminen
 
-Tehtävissä käytettävät tietokannat, `kurssit_1` ja `kurssit_2` voi perustaa esim. Studion login -ikkunan kautta (*New DB* -painonappi). Tietokantojen rakenteen ja sisällön määrittelevät komentotiedostot löytyvät tehtäväpohjasta. Ne voidaan suorittaa kopioimalla tiedostojen sisältö konsolin kehote -merkin perään. 
+Tehtävissä käytettävät tietokannat, `kurssit_1` ja `kurssit_2` voi perustaa esim. **Studion** login -ikkunan kautta (*New DB* -painonappi). 
+
+Tietokantojen rakenteen ja sisällön määrittelevät komentotiedostot löytyvät tehtäväpohjasta. Ne voidaan suorittaa kopioimalla tiedostojen sisältö komentopohjaisen **konsolin** kehote -merkin perään. 
 
